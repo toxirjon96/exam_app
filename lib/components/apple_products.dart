@@ -87,7 +87,7 @@ class AppleProducts extends StatelessWidget {
                         child: IconButton(
                           onPressed: () {},
                           icon: Icon(
-                            Icons.home,
+                            Icons.home_outlined,
                             color: subColor,
                             size: 40,
                           ),

@@ -29,7 +29,7 @@ class _SingleElementState extends State<SingleElement> {
   Widget build(BuildContext context) {
     if (!emptyHeart) {
       heartIcon = Icon(
-        CupertinoIcons.heart_solid,
+        CupertinoIcons.heart,
         color: widget.subColor,
         size: 20,
       );
