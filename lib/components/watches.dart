@@ -63,7 +63,7 @@ class Watches extends StatelessWidget {
                     "The Apple watch series 3 is designed for people who want to keep their fitness game on point.",
                 price: 315.0,
                 image: Image.asset(
-                  "assets/images/series-3.png",
+                  "assets/images/series-3.1.png",
                 ),
                 subColor: subColor,
                 mainColor: mainColor,

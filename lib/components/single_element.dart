@@ -1,6 +1,7 @@
 import 'package:exam_app/exam_app_library.dart';
+import 'package:flutter/cupertino.dart';
 
-class SingleElement extends StatelessWidget {
+class SingleElement extends StatefulWidget {
   final Color mainColor;
   final Color subColor;
   final Color additionalColor;
@@ -16,7 +17,34 @@ class SingleElement extends StatelessWidget {
   final Function(String state) changeScreen;
 
   @override
+  State<StatefulWidget> createState() => _SingleElementState();
+}
+
+class _SingleElementState extends State<SingleElement> {
+  bool emptyHeart = false;
+  Icon? heartIcon;
+
+  @override
   Widget build(BuildContext context) {
+    if (!emptyHeart) {
+      heartIcon = Icon(
+        CupertinoIcons.heart_solid,
+        color: widget.subColor,
+        size: 20,
+      );
+    } else {
+      heartIcon = const Icon(
+        CupertinoIcons.heart_fill,
+        color: Colors.red,
+        size: 20,
+      );
+    }
+    void likeState() {
+      setState(() {
+        emptyHeart = !emptyHeart;
+      });
+    }
+
     return SafeArea(
       child: Column(
         children: [
@@ -28,22 +56,34 @@ class SingleElement extends StatelessWidget {
                 children: [
                   IconButton(
                     onPressed: () {
-                      changeScreen("main");
+                      widget.changeScreen("main");
                     },
                     icon: Icon(
                       Icons.arrow_back,
-                      color: mainColor,
+                      color: widget.mainColor,
                       size: 40,
                     ),
+                  ),
+                  OutlinedButton(
+                    onPressed: likeState,
+                    style: OutlinedButton.styleFrom(
+                      padding: const EdgeInsets.all(10),
+                      shape: const CircleBorder(),
+                      backgroundColor: widget.mainColor,
+                    ),
+                    child: heartIcon,
                   ),
                 ],
               ),
             ),
           ),
-          const Expanded(
+          Expanded(
             flex: 8,
             child: Column(
-              children: [],
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset("assets/images/series-3.2.png"),
+              ],
             ),
           ),
         ],
