@@ -93,6 +93,55 @@ class _SingleElementState extends State<SingleElement> {
                       height: 300,
                     ),
                   ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        color: widget.mainColor,
+                        width: 46,
+                        height: 5,
+                      ),
+                      const SizedBox(
+                        width: 5,
+                      ),
+                      Container(
+                        width: 5,
+                        height: 5,
+                        decoration: BoxDecoration(
+                          color: widget.additionalColor,
+                          shape: BoxShape.circle,
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 5,
+                      ),
+                      Container(
+                        width: 5,
+                        height: 5,
+                        decoration: BoxDecoration(
+                          color: widget.additionalColor,
+                          shape: BoxShape.circle,
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 5,
+                      ),
+                      Container(
+                        width: 5,
+                        height: 5,
+                        decoration: BoxDecoration(
+                          color: widget.additionalColor,
+                          shape: BoxShape.circle,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
                   Text(
                     "Series 3",
                     style: GoogleFonts.poppins(
@@ -115,7 +164,7 @@ class _SingleElementState extends State<SingleElement> {
                   Row(
                     children: [
                       Text(
-                        "\$295",
+                        "\$295.0",
                         style: GoogleFonts.poppins(
                           fontSize: 22,
                           color: widget.mainColor,
